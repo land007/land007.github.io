@@ -7,6 +7,103 @@ const path = require("path");
 // 替换成你的 Vercel 域名
 const baseUrl = "http://localhost:3002";
 
+const musicalInstruments = {
+    "钢琴": "Piano",
+    "吉他": "Guitar",
+    "小提琴": "Violin",
+    "大提琴": "Cello",
+    "中提琴": "Viola",
+    "长笛": "Flute",
+    "单簧管": "Clarinet",
+    "萨克斯ophone": "Saxophone",
+    "圆号": "French Horn",
+    "小号": "Trumpet",
+    "低音提琴": "Double Bass",
+    "竖琴": "Harp",
+    "管风琴": "Organ",
+    "电子琴": "Electric Keyboard",
+    "打击乐器": "Percussion Instruments",
+    "鼓组": "Drum Set",
+    "定音鼓": "Timpani",
+    "鼓": "Drums",
+    "木琴": "Xylophone",
+    "马林巴": "Marimba",
+    "钢片琴": "Glockenspiel",
+    "铙钹": "Cymbals",
+    "铃鼓": "Tambourine",
+    "沙锤": "Shaker",
+    "三角铁": "Triangle",
+    "钢管琴": "Steelpan",
+    "小鼓": "Snare Drum",
+    "巴松管": "Bassoon",
+    "低音号角": "Tuba",
+    "电子吉他": "Electric Guitar",
+    "电子贝斯": "Electric Bass",
+    "手风琴": "Accordion",
+    "口琴": "Harmonica",
+    "双簧管": "Oboe",
+    "古筝": "Gu Zheng",
+    "二胡": "Erhu",
+    "扬琴": "Yangqin",
+    "笛子": "Dizi",
+    "琵琶": "Pipa",
+    "胡琴": "Huqin",
+    "笙": "Sheng",
+    "唢呐": "Suona",
+    "大鼓": "Bass Drum",
+    "锣": "Gong",
+    "大号": "Bass Trombone",
+    "小号": "Trumpet",
+    "小鼓": "Tom-tom",
+    "卡祖笛": "Kazoo",
+    "小提琴": "Violin",
+    "吉他": "Guitar",
+    "手鼓": "Bongo Drum",
+    "康加鼓": "Conga",
+    "陶笛": "Ocarina",
+    "卡林巴": "Kalimba",
+    "杜布尔音": "Duduk",
+    "贝尔": "Bell",
+    "口风琴": "Melodica",
+    "铜管乐器": "Brass Instruments",
+    "弦乐器": "String Instruments",
+    "木管乐器": "Woodwind Instruments",
+    "打击乐器": "Percussion Instruments"
+};
+
+const band = [
+    {
+        "乐队1": ["吉他", "小提琴", "长笛", "低音提琴", "电子吉他"]
+    },
+    {
+        "乐队2": ["钢琴", "萨克斯ophone", "鼓组", "小号", "马林巴"]
+    },
+    {
+        "乐队3": ["钢管琴", "小提琴", "大提琴", "电子吉他", "贝斯"]
+    },
+    {
+        "乐队4": ["吉他", "打击乐器", "笛子", "大号", "小号"]
+    },
+    {
+        "乐队5": ["中提琴", "竖琴", "三角铁", "低音提琴", "小鼓"]
+    },
+    {
+        "乐队6": ["口琴", "木琴", "电子琴", "低音号角", "鼓组"]
+    },
+    {
+        "乐队7": ["大鼓", "打击乐器", "小号", "小提琴", "卡林巴"]
+    },
+    {
+        "乐队8": ["双簧管", "大提琴", "长笛", "笙", "马林巴"]
+    },
+    {
+        "乐队9": ["钢琴", "贝尔", "电子吉他", "鼓组", "康加鼓"]
+    },
+    {
+        "乐队10": ["胡琴", "手风琴", "小鼓", "大鼓", "小号"]
+    }
+];
+
 // 自定义生成音频接口
 async function customGenerateAudio(payload) {
     const url = `${baseUrl}/api/custom_generate`;
