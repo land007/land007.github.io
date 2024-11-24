@@ -3,6 +3,7 @@ const fs = require("fs");
 const https = require("https");
 const path = require("path");
 
+// /node/suno-api_yuan# npm run dev
 // 替换成你的 Vercel 域名
 const baseUrl = "http://localhost:3002";
 
